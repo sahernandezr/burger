@@ -8,6 +8,7 @@ var connection = mysql.createConnection({
     database: process.env.DB_NAME
 });
 
+
 // Make connection.
 connection.connect(function(err) {
   if (err) {

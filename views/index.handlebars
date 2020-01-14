@@ -1,49 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<h1>Burgers!!!</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Burguer</title>
-</head>
+<h2>Burgers to eat</h2>
 
-<body>
-    <h1>Burgers!!!</h1>
-
-    <h2>Burgers to eat</h2>
-
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{/unless}}
-        {{/each}}
-    </ul>
-
-
-    <h2>Burguers eaten</h2>
-
-    <ul>
-  {{#each burgers}}
-    {{#if devoured}}
-    {{/if}}
-  {{/each}}
+<ul class="available">
+    {{#each burgers}}
+    {{#unless devoured}}
+     {{> burgers/burger-block devour=true}}
+    {{/unless}}
+    {{/each}}
 </ul>
 
 
-    <h2>Add a burger!</h2>
+<h2>Burguers eaten</h2>
 
-    <form class="create-form">
-
-        <div class="form-group">
-            <label for="newburger">Burguer Name:</label>
-            <input type="text" id="newburger" name="name">
-        </div>
-
-        <button type="submit">Add Burger</button>
-    </form>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{/if}}
+    {{/each}}
+</ul>
 
 
-</body>
+<h2>Add a burger!</h2>
 
-</html>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="newburger">Burguer Name:</label>
+        <input type="text" id="newburger" name="name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>

@@ -11,7 +11,7 @@ $(function() {
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newDevouredState
+        data: newDevoured
       }).then(
         function() {
           console.log("changed devoured to", newDevoured);
@@ -26,7 +26,7 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#newburger").val().trim()
+        name: $("#newburger").val().trim(),
       };
   
       // Send the POST request.
